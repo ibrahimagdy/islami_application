@@ -6,16 +6,18 @@ class ApplicationTheme {
     primaryColor: const Color(0xffB7935F),
     scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: AppBarTheme(
-      iconTheme: IconThemeData(
+      iconTheme: const IconThemeData(
         color: Colors.black,
       ),
       elevation: 0,
       backgroundColor: Colors.transparent,
       centerTitle: true,
       titleTextStyle: GoogleFonts.elMessiri(
-          fontSize: 30, fontWeight: FontWeight.bold, color: Color(0xff242424)),
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+          color: const Color(0xff242424)),
     ),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       type: BottomNavigationBarType.fixed,
       backgroundColor: Color(0xffB7935F),
       selectedIconTheme: IconThemeData(
@@ -33,22 +35,27 @@ class ApplicationTheme {
         titleLarge: GoogleFonts.elMessiri(
           fontWeight: FontWeight.bold,
           fontSize: 30,
-          color: Color(0xff242424),
+          color: const Color(0xff242424),
+        ),
+        titleMedium: GoogleFonts.elMessiri(
+          fontWeight: FontWeight.bold,
+          fontSize: 25,
+          color: const Color(0xff242424),
         ),
         bodyLarge: GoogleFonts.elMessiri(
           fontSize: 25,
           fontWeight: FontWeight.w500,
-          color: Color(0xff242424),
+          color: const Color(0xff242424),
         ),
         bodyMedium: GoogleFonts.inter(
           fontSize: 25,
           fontWeight: FontWeight.bold,
-          color: Color(0xff242424),
+          color: const Color(0xff242424),
         ),
         bodySmall: GoogleFonts.inter(
           fontSize: 20,
           fontWeight: FontWeight.w500,
-          color: Color(0xff242424),
+          color: const Color(0xff242424),
         )),
   );
   static ThemeData darkTheme = ThemeData(
@@ -57,7 +64,9 @@ class ApplicationTheme {
       backgroundColor: Colors.transparent,
       centerTitle: true,
       titleTextStyle: GoogleFonts.elMessiri(
-          fontSize: 30, fontWeight: FontWeight.bold, color: Color(0xff242424)),
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+          color: const Color(0xff242424)),
     ),
     scaffoldBackgroundColor: Colors.transparent,
   );
