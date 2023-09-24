@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_application/moduls/hadeth_screen/hadeth_screen.dart';
 import 'package:islami_application/moduls/quran_screen/quran_screen.dart';
 import 'package:islami_application/moduls/radio_screen/radio_screen.dart';
@@ -15,17 +16,18 @@ class HomeLayout extends StatefulWidget {
 }
 
 class HomeLayoutState extends State<HomeLayout> {
-  int selectedIndex = 4;
+  int selectedIndex = 0;
   List<Widget> screens = [
-    SettingsScreen(),
-    RadioScreen(),
-    TasbehScreen(),
-    HadethScreen(),
     QuranScreen(),
+    HadethScreen(),
+    TasbehScreen(),
+    RadioScreen(),
+    SettingsScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
+    var local = AppLocalizations.of(context)!;
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
@@ -35,8 +37,8 @@ class HomeLayoutState extends State<HomeLayout> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: const Text(
-            "إسلامي",
+          title: Text(
+            AppLocalizations.of(context)!.islami,
           ),
         ),
         body: screens[selectedIndex],
@@ -47,34 +49,34 @@ class HomeLayoutState extends State<HomeLayout> {
               selectedIndex = index;
             });
           },
-          items: const [
+          items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: "الإعدادات",
-            ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage("assets/images/radio_icon.png"),
-              ),
-              label: "الراديو",
-            ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage("assets/images/sebha_icon.png"),
-              ),
-              label: "التسبيح",
-            ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage("assets/images/hadeth_icon.png"),
-              ),
-              label: "الأحاديث",
-            ),
-            BottomNavigationBarItem(
-              icon: ImageIcon(
+              icon: const ImageIcon(
                 AssetImage("assets/images/quran_icon.png"),
               ),
-              label: "القرآن",
+              label: local.quran,
+            ),
+            BottomNavigationBarItem(
+              icon: const ImageIcon(
+                AssetImage("assets/images/hadeth_icon.png"),
+              ),
+              label: local.hadeth,
+            ),
+            BottomNavigationBarItem(
+              icon: const ImageIcon(
+                AssetImage("assets/images/sebha_icon.png"),
+              ),
+              label: local.tasbeh,
+            ),
+            BottomNavigationBarItem(
+              icon: const ImageIcon(
+                AssetImage("assets/images/radio_icon.png"),
+              ),
+              label: local.radio,
+            ),
+            BottomNavigationBarItem(
+              icon: const Icon(Icons.settings),
+              label: local.settings,
             ),
           ],
         ),

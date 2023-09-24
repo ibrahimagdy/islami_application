@@ -251,7 +251,7 @@ class QuranScreen extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                "عدد الآيات",
+                "اسم السورة",
                 style: theme.textTheme.bodyLarge,
                 textAlign: TextAlign.center,
               ),
@@ -263,7 +263,7 @@ class QuranScreen extends StatelessWidget {
             ),
             Expanded(
               child: Text(
-                "اسم السورة",
+                "عدد الآيات",
                 style: theme.textTheme.bodyLarge,
                 textAlign: TextAlign.center,
               ),

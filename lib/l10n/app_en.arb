@@ -1,0 +1,14 @@
+{
+    "islami" : "Islami",
+    "quran" : "Quran",
+    "hadeth" : "Hadeth",
+    "tasbeh" : "Tasbeh",
+    "radio" : "Radio",
+    "settings" : "Settings",
+    "language" : "Language",
+    "english" : "English",
+    "arabic" : "Arabic",
+    "themeMode" : "Theme Mode",
+    "lightMode" : "Light Mode",
+    "darkMode" : "Dark Mode"
+}
