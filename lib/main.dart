@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_application/core/theme/application_theme.dart';
 import 'package:islami_application/layout/home_layout.dart';
 import 'package:islami_application/moduls/hadeth_screen/hadeth_details.dart';
@@ -25,6 +26,9 @@ class MyApplication extends StatelessWidget {
       },
       theme: ApplicationTheme.lightTheme,
       darkTheme: ApplicationTheme.darkTheme,
+      locale: Locale("en"),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }

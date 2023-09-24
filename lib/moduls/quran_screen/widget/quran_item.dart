@@ -14,7 +14,7 @@ class QuranItem extends StatelessWidget {
       children: [
         Expanded(
           child: Text(
-            suraNumber,
+            suraName,
             style: theme.textTheme.bodyLarge,
             textAlign: TextAlign.center,
           ),
@@ -26,7 +26,7 @@ class QuranItem extends StatelessWidget {
         ),
         Expanded(
           child: Text(
-            suraName,
+            suraNumber,
             style: theme.textTheme.bodyLarge,
             textAlign: TextAlign.center,
           ),
