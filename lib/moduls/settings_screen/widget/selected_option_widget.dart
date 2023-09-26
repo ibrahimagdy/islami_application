@@ -17,7 +17,10 @@ class SelectedOptionWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(selectedTitle),
+          Text(
+            selectedTitle,
+            style: theme.textTheme.labelMedium,
+          ),
           Icon(
             Icons.check,
             color: theme.colorScheme.onPrimary,
