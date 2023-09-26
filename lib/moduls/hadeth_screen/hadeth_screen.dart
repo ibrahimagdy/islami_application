@@ -21,13 +21,11 @@ class _HadethScreenState extends State<HadethScreen> {
     return Column(
       children: [
         Image.asset("assets/images/hadeth_header.png"),
-        Divider(
-          color: theme.primaryColor,
+        const Divider(
           thickness: 3,
         ),
         Text("الأحاديث", style: theme.textTheme.bodyLarge),
-        Divider(
-          color: theme.primaryColor,
+        const Divider(
           thickness: 3,
         ),
         Expanded(
@@ -49,12 +47,11 @@ class _HadethScreenState extends State<HadethScreen> {
               ),
             ),
             itemCount: allHadeeth.length,
-            separatorBuilder: (context, index) => Divider(
-              color: theme.primaryColor,
-              thickness: 1.5,
-              indent: 35,
-              endIndent: 35,
-              height: 15,
+            separatorBuilder: (context, index) => const Divider(
+              thickness: 2,
+              indent: 80,
+              endIndent: 80,
+              height: 16,
             ),
           ),
         ),

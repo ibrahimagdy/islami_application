@@ -243,8 +243,7 @@ class QuranScreen extends StatelessWidget {
     return Column(
       children: [
         Image.asset("assets/images/quran_header.png"),
-        Divider(
-          color: theme.primaryColor,
+        const Divider(
           thickness: 3,
         ),
         Row(
@@ -259,7 +258,7 @@ class QuranScreen extends StatelessWidget {
             Container(
               width: 3,
               height: 45,
-              color: theme.primaryColor,
+              color: theme.colorScheme.onSecondaryContainer,
             ),
             Expanded(
               child: Text(
@@ -270,8 +269,7 @@ class QuranScreen extends StatelessWidget {
             ),
           ],
         ),
-        Divider(
-          color: theme.primaryColor,
+        const Divider(
           thickness: 3,
         ),
         Expanded(
