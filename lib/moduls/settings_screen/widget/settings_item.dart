@@ -36,7 +36,7 @@ class SettingsItem extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(14),
               border: Border.all(
-                color: theme.primaryColor,
+                color: theme.colorScheme.onSecondaryContainer,
                 width: 2.5,
               ),
             ),
@@ -45,11 +45,12 @@ class SettingsItem extends StatelessWidget {
               children: [
                 Text(
                   settingsOptionSelected,
-                  style: theme.textTheme.bodySmall,
+                  style: theme.textTheme.titleMedium,
                 ),
-                const Icon(
+                Icon(
                   Icons.arrow_drop_down,
                   size: 30,
+                  color: theme.colorScheme.onPrimary,
                 ),
               ],
             ),

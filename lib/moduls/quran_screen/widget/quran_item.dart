@@ -22,7 +22,7 @@ class QuranItem extends StatelessWidget {
         Container(
           width: 3,
           height: 45,
-          color: theme.primaryColor,
+          color: theme.colorScheme.onSecondaryContainer,
         ),
         Expanded(
           child: Text(
