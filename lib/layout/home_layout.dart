@@ -22,7 +22,7 @@ class HomeLayoutState extends State<HomeLayout> {
   List<Widget> screens = [
     const QuranScreen(),
     const HadethScreen(),
-    TasbehScreen(),
+    const TasbehScreen(),
     RadioScreen(),
     const SettingsScreen(),
   ];

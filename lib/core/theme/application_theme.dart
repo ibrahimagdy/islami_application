@@ -11,6 +11,7 @@ class ApplicationTheme {
       onSecondary: const Color(0xffF8F8F8),
       onPrimaryContainer: const Color(0xffF8F8F8),
       onSecondaryContainer: const Color(0xffB7935F),
+      outline: const Color(0xff242424),
     ),
     scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: AppBarTheme(
@@ -50,14 +51,19 @@ class ApplicationTheme {
           fontSize: 25,
           color: const Color(0xff242424),
         ),
+        labelMedium: GoogleFonts.elMessiri(
+          fontWeight: FontWeight.bold,
+          fontSize: 25,
+          color: Colors.white,
+        ),
         bodyLarge: GoogleFonts.elMessiri(
           fontSize: 25,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.bold,
           color: const Color(0xff242424),
         ),
-        bodyMedium: GoogleFonts.inter(
+        bodyMedium: GoogleFonts.elMessiri(
           fontSize: 25,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w500,
           color: const Color(0xff242424),
         ),
         bodySmall: GoogleFonts.elMessiri(
@@ -79,6 +85,7 @@ class ApplicationTheme {
       onSecondary: const Color(0xffFACC1D),
       onPrimaryContainer: const Color(0xff141A2E),
       onSecondaryContainer: const Color(0xffFACC1D),
+      outline: Colors.white,
     ),
     appBarTheme: AppBarTheme(
       iconTheme: const IconThemeData(
@@ -117,6 +124,11 @@ class ApplicationTheme {
           fontWeight: FontWeight.bold,
           fontSize: 25,
           color: const Color(0xffF8F8F8),
+        ),
+        labelMedium: GoogleFonts.elMessiri(
+          fontWeight: FontWeight.bold,
+          fontSize: 25,
+          color: const Color(0xff242424),
         ),
         bodyLarge: GoogleFonts.elMessiri(
           fontSize: 25,
