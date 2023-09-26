@@ -276,12 +276,15 @@ class QuranScreen extends StatelessWidget {
           child: ListView.builder(
             itemBuilder: (context, index) => GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, QuranDetails.routeName,
-                    arguments: SuraDetails(
-                      suraName: suraNames[index],
-                      suraNumber: suraNumbers[index],
-                      suraIndex: "${index + 1}",
-                    ));
+                Navigator.pushNamed(
+                  context,
+                  QuranDetails.routeName,
+                  arguments: SuraDetails(
+                    suraName: suraNames[index],
+                    suraNumber: suraNumbers[index],
+                    suraIndex: "${index + 1}",
+                  ),
+                );
               },
               child: QuranItem(
                 suraName: suraNames[index],
@@ -290,7 +293,7 @@ class QuranScreen extends StatelessWidget {
             ),
             itemCount: suraNames.length,
           ),
-        )
+        ),
       ],
     );
   }
