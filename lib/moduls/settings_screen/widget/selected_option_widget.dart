@@ -3,25 +3,26 @@ import 'package:flutter/material.dart';
 class SelectedOptionWidget extends StatelessWidget {
   final String selectedTitle;
 
-  SelectedOptionWidget({required this.selectedTitle});
+  const SelectedOptionWidget({super.key, required this.selectedTitle});
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white24,
-        border: Border.all(
-          color: Colors.black,
-          width: 2,
-        ),
+        color: Colors.white54,
         borderRadius: BorderRadius.circular(15),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(selectedTitle),
-          Icon(Icons.check),
+          Icon(
+            Icons.check,
+            color: theme.colorScheme.onPrimary,
+            size: 30,
+          ),
         ],
       ),
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_application/core/provider/app_provider.dart';
 import 'package:islami_application/moduls/quran_screen/quran_screen.dart';
+import 'package:provider/provider.dart';
 
 class QuranDetails extends StatefulWidget {
   static const String routeName = "Quran Details";
@@ -23,10 +25,13 @@ class _QuranDetailsState extends State<QuranDetails> {
     }
     var mediaQuery = MediaQuery.of(context).size;
     var theme = Theme.of(context);
+    var appProvider = Provider.of<AppProvider>(context);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           image: DecorationImage(
-        image: AssetImage("assets/images/home_layout_bg_light.png"),
+        image: AssetImage(
+          appProvider.backgroundImage(),
+        ),
         fit: BoxFit.cover,
       )),
       child: Scaffold(
@@ -40,7 +45,7 @@ class _QuranDetailsState extends State<QuranDetails> {
           width: mediaQuery.width,
           height: mediaQuery.height,
           decoration: BoxDecoration(
-            color: const Color(0xffF8F8F8).withOpacity(0.8),
+            color: theme.colorScheme.onPrimaryContainer.withOpacity(0.8),
             borderRadius: BorderRadius.circular(25),
           ),
           child: Column(
@@ -50,26 +55,31 @@ class _QuranDetailsState extends State<QuranDetails> {
                 children: [
                   Text(
                     "سورة ${args.suraName}",
-                    style: theme.textTheme.bodyMedium,
+                    style: theme.textTheme.bodyMedium!
+                        .copyWith(color: theme.colorScheme.onPrimary),
                   ),
                   const SizedBox(width: 10),
-                  const Icon(Icons.play_circle, color: Colors.black, size: 30),
+                  Icon(Icons.play_circle,
+                      color: theme.colorScheme.onPrimary, size: 30),
                 ],
               ),
-              Divider(
-                thickness: 1.5,
-                color: theme.primaryColor,
+              const Divider(
+                thickness: 2.5,
                 indent: 40,
                 endIndent: 40,
                 height: 10,
               ),
+              const SizedBox(height: 10),
               Expanded(
                 child: ListView.builder(
                   itemCount: allVerses.length,
                   itemBuilder: (context, index) => Text(
                     allVerses[index],
-                    style: theme.textTheme.bodySmall,
                     textAlign: TextAlign.center,
+                    style: theme.textTheme.bodySmall!.copyWith(
+                      color: theme.colorScheme.onPrimary,
+                      height: 2,
+                    ),
                   ),
                 ),
               ),

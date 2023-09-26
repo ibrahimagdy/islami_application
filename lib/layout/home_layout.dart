@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_application/core/provider/app_provider.dart';
 import 'package:islami_application/moduls/hadeth_screen/hadeth_screen.dart';
 import 'package:islami_application/moduls/quran_screen/quran_screen.dart';
 import 'package:islami_application/moduls/radio_screen/radio_screen.dart';
 import 'package:islami_application/moduls/settings_screen/settings_screen.dart';
 import 'package:islami_application/moduls/tasbeh_screen/tasbeh_screen.dart';
+import 'package:provider/provider.dart';
 
 class HomeLayout extends StatefulWidget {
   static const String routeName = "Home Layout";
 
-  HomeLayout({super.key});
+  const HomeLayout({super.key});
 
   @override
   State<HomeLayout> createState() => HomeLayoutState();
@@ -18,20 +20,21 @@ class HomeLayout extends StatefulWidget {
 class HomeLayoutState extends State<HomeLayout> {
   int selectedIndex = 0;
   List<Widget> screens = [
-    QuranScreen(),
-    HadethScreen(),
+    const QuranScreen(),
+    const HadethScreen(),
     TasbehScreen(),
     RadioScreen(),
-    SettingsScreen(),
+    const SettingsScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     var local = AppLocalizations.of(context)!;
+    var appProvider = Provider.of<AppProvider>(context);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           image: DecorationImage(
-        image: AssetImage("assets/images/home_layout_bg_light.png"),
+        image: AssetImage(appProvider.backgroundImage()),
         fit: BoxFit.cover,
       )),
       child: Scaffold(
