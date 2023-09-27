@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class RadioScreen extends StatelessWidget {
+  const RadioScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);

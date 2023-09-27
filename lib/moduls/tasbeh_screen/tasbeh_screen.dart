@@ -3,7 +3,7 @@ import 'package:islami_application/core/provider/app_provider.dart';
 import 'package:provider/provider.dart';
 
 class TasbehScreen extends StatefulWidget {
-  const TasbehScreen({super.key});
+  const TasbehScreen({Key? key}) : super(key: key);
 
   @override
   State<TasbehScreen> createState() => TasbehScreenState();
@@ -36,10 +36,24 @@ class TasbehScreenState extends State<TasbehScreen> {
                 ),
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 105),
-                  child: Image.asset(
-                    appProvider.isLight()
-                        ? "assets/images/body_sebha_light.png"
-                        : "assets/images/body_sebha_dark.png",
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        counter++;
+                        if (counter >= 33) {
+                          currentIndex = (currentIndex + 1) % zekrList.length;
+                          counter = 0;
+                        }
+                      });
+                    },
+                    child: Transform.rotate(
+                      angle: counter * (360 / 4) * (3.1415926535897932 / 180),
+                      child: Image.asset(
+                        appProvider.isLight()
+                            ? "assets/images/body_sebha_light.png"
+                            : "assets/images/body_sebha_dark.png",
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -70,7 +84,7 @@ class TasbehScreenState extends State<TasbehScreen> {
             onTap: () {
               setState(() {
                 counter++;
-                if (counter % 33 == 0) {
+                if (counter >= 33) {
                   currentIndex = (currentIndex + 1) % zekrList.length;
                   counter = 0;
                 }
